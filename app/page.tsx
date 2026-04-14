@@ -38,18 +38,19 @@ export default function HomePage() {
     <div className="min-h-screen">
 
       {/* ── Hero: YouTube Video ── */}
-      <section className="relative w-full overflow-hidden">
-        {/* 16:9 Video wrapper – zeigt das gesamte Video ohne Zoom */}
-        <div className="pointer-events-none aspect-video w-full">
+      {/* -mt-20 hebt den Hero hinter die fixe Navbar, sodass kein weißer Rand oben entsteht */}
+      <section className="relative w-full overflow-hidden -mt-20">
+        {/* 16:9 Video wrapper – scale-[1.04] versteckt YouTubes dünne schwarze Ränder */}
+        <div className="pointer-events-none w-full" style={{ paddingBottom: '56.25%', position: 'relative' }}>
           <iframe
             src="https://www.youtube.com/embed/1GHUCobXcKE?autoplay=1&mute=1&loop=1&playlist=1GHUCobXcKE&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
             allow="autoplay; fullscreen"
-            className="w-full h-full"
+            className="absolute inset-0 w-full h-full scale-[1.04] origin-center"
             style={{ border: 0 }}
           />
         </div>
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/50 via-primary/65 to-primary/80" />
+        {/* Dunkles Vignette-Overlay – passend zum Screenshot */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a1628]/85 via-[#0f1f33]/55 to-[#0a1628]/85" />
 
         {/* Hero Content */}
         <div className="absolute inset-0 z-10 flex items-center justify-center">
@@ -90,10 +91,10 @@ export default function HomePage() {
       </section>
 
       {/* ── Dienstleistungen ── */}
-      <section className="py-20 px-4 bg-gradient-to-b from-white to-gray-100">
+      <section className="py-20 px-4 bg-gradient-to-b from-slate-400 via-[#1e3a5f] to-[#0f1f33]">
         <div className="max-w-7xl mx-auto">
           <AnimatedSection>
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-16">
               Dienstleistungen Von Cesarsicherheit
             </h2>
           </AnimatedSection>
