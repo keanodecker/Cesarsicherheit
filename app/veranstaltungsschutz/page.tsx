@@ -16,7 +16,7 @@ export default function VeranstaltungsschutzPage() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <SlideIn direction="left">
               <div className="relative h-[320px] rounded-xl overflow-hidden shadow-2xl">
-                <Image src="/images/bild-6.jpg" alt="Veranstaltungsplanung" fill className="object-cover" />
+                <Image src="/images/5.png" alt="Veranstaltungsplanung" fill className="object-cover" />
               </div>
             </SlideIn>
             <SlideIn direction="right" delay={0.2}>
@@ -66,7 +66,7 @@ export default function VeranstaltungsschutzPage() {
             </SlideIn>
             <SlideIn direction="right" delay={0.2}>
               <div className="relative h-[380px] rounded-xl overflow-hidden shadow-2xl">
-                <Image src="/images/bild-7.jpg" alt="Sicherheitspersonal" fill className="object-cover" />
+                <Image src="/images/6.png" alt="Sicherheitspersonal" fill className="object-cover" />
               </div>
             </SlideIn>
           </div>
@@ -121,10 +121,10 @@ export default function VeranstaltungsschutzPage() {
             <SlideIn direction="left">
               <div className="space-y-6">
                 <div className="relative h-[280px] rounded-xl overflow-hidden shadow-xl">
-                  <Image src="/images/bild-8.jpg" alt="Einlasskontrolle" fill className="object-cover" />
+                  <Image src="/images/7.png" alt="Einlasskontrolle" fill className="object-cover" />
                 </div>
                 <div className="relative h-[280px] rounded-xl overflow-hidden shadow-xl">
-                  <Image src="/images/bild-9.jpg" alt="Backstage Schutz" fill className="object-cover" />
+                  <Image src="/images/8.jpg" alt="Backstage Schutz" fill className="object-cover" />
                 </div>
               </div>
             </SlideIn>

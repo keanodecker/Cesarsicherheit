@@ -105,7 +105,7 @@ export default function HomePage() {
                 <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 h-full">
                   <div className="relative h-64 image-hover">
                     <Image
-                      src="/images/bild-2.jpg"
+                      src="/images/1.png"
                       alt="Veranstaltungsschutz"
                       fill
                       className="object-cover"
@@ -129,7 +129,7 @@ export default function HomePage() {
                 <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 h-full">
                   <div className="relative h-64 image-hover">
                     <Image
-                      src="/images/bild-3.jpg"
+                      src="/images/2.png"
                       alt="Objektschutz"
                       fill
                       className="object-cover"
