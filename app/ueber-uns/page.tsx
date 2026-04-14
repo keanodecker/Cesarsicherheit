@@ -43,7 +43,7 @@ export default function UeberUnsPage() {
               <div className="flex-shrink-0">
                 <div className="relative w-40 h-52 md:w-48 md:h-64 rounded-lg overflow-hidden shadow-xl">
                   <Image
-                    src="/images/bild-4.jpg"
+                    src="/images/3.png"
                     alt="Sezer Ülker – Geschäftsführer"
                     fill
                     className="object-cover object-top"
@@ -122,7 +122,7 @@ export default function UeberUnsPage() {
             </SlideIn>
             <SlideIn direction="right" delay={0.2}>
               <div className="relative h-[380px] rounded-xl overflow-hidden shadow-2xl">
-                <Image src="/images/bild-5.jpg" alt="Unser Team" fill className="object-cover" />
+                <Image src="/images/4.webp" alt="Unser Team" fill className="object-cover" />
               </div>
             </SlideIn>
           </div>

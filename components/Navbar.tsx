@@ -44,7 +44,7 @@ export default function Navbar() {
             <Link href="/" className="flex items-center">
               <div className="relative h-16 w-48">
                 <Image
-                  src="/images/bild-logo.png"
+                  src="/images/logo.svg"
                   alt="Cesar Sicherheit"
                   fill
                   className="object-contain"
