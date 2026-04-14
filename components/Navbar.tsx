@@ -33,10 +33,10 @@ export default function Navbar() {
   const navBg = isHome
     ? isScrolled
       ? "bg-[#0f1f33]/90 backdrop-blur-md shadow-lg py-2"
-      : "bg-transparent py-3"
+      : "bg-transparent py-2"
     : isScrolled
       ? "bg-white/95 backdrop-blur-md shadow-lg py-2"
-      : "bg-white py-3";
+      : "bg-white py-2";
 
   // Determine link color
   const linkColor = isHome
@@ -56,9 +56,9 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
-            {/* Logo — overflows slightly below navbar */}
-            <Link href="/" className="flex items-center relative">
-              <div className="relative h-24 w-56" style={{ marginBottom: "-16px" }}>
+            {/* Logo */}
+            <Link href="/" className="flex items-center">
+              <div className="relative h-16 w-44">
                 <Image
                   src="/images/logo.png"
                   alt="Cesar Sicherheit"
