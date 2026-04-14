@@ -79,3 +79,17 @@ input, textarea {
 .image-hover:hover img {
   @apply scale-105;
 }
+
+/* Review carousel scroll animation */
+@keyframes reviewScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.review-track {
+  animation: reviewScroll 24s linear infinite;
+}
+
+.review-track:hover {
+  animation-play-state: paused;
+}
