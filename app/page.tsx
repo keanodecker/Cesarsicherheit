@@ -38,21 +38,22 @@ export default function HomePage() {
     <div className="min-h-screen">
 
       {/* ── Hero: YouTube Video ── */}
-      <section className="relative h-[600px] md:h-[700px] flex items-center justify-center overflow-hidden">
-        {/* YouTube iframe background */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
+      <section className="relative w-full overflow-hidden">
+        {/* 16:9 Video wrapper – zeigt das gesamte Video ohne Zoom */}
+        <div className="pointer-events-none aspect-video w-full">
           <iframe
-            src="https://www.youtube.com/embed/1GHUCobXcKE?autoplay=1&mute=1&loop=1&playlist=1GHUCobXcKE&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
+            src="https://www.youtube.com/embed/1GHUCobXcKE?autoplay=1&mute=1&loop=1&playlist=1GHUCobXcKE&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
             allow="autoplay; fullscreen"
-            className="absolute w-[300%] h-[300%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+            className="w-full h-full"
             style={{ border: 0 }}
           />
-          {/* Dark overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/70 to-primary/85" />
         </div>
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/50 via-primary/65 to-primary/80" />
 
         {/* Hero Content */}
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+        <div className="absolute inset-0 z-10 flex items-center justify-center">
+        <div className="text-center px-4 max-w-4xl mx-auto">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -84,6 +85,7 @@ export default function HomePage() {
               Jetzt unverbindliches Angebot einholen
             </Link>
           </motion.div>
+        </div>
         </div>
       </section>
 
