@@ -31,8 +31,8 @@ export default function UeberUnsPage() {
   return (
     <div className="min-h-screen pb-20">
 
-      {/* ── Gradient Header Banner ── */}
-      <div className="h-24 bg-gradient-to-b from-slate-400 via-[#1e3a5f] to-[#0f1f33]" />
+      {/* ── Gradient Header Banner — fades to white so Geschäftsführer connects ── */}
+      <div className="h-40 bg-gradient-to-b from-slate-400 via-[#1e3a5f] to-white" />
 
       {/* ── Geschäftsführer ── */}
       <section className="py-16 bg-white">
@@ -97,7 +97,7 @@ export default function UeberUnsPage() {
       </section>
 
       {/* ── Unser Team ── */}
-      <section className="py-20 bg-gradient-to-b from-gray-100 to-white">
+      <section className="py-20 bg-gradient-to-b from-white to-slate-300">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <SlideIn direction="left">
@@ -130,7 +130,7 @@ export default function UeberUnsPage() {
       </section>
 
       {/* ── Stats ── */}
-      <section className="py-20 bg-gradient-to-b from-[#1e3a5f] to-[#0f1f33] text-white">
+      <section className="py-20 bg-gradient-to-b from-slate-300 via-[#1e3a5f] to-[#0f1f33] text-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             {[
@@ -152,7 +152,7 @@ export default function UeberUnsPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-20 bg-gradient-to-b from-[#0f1f33] to-white">
+      <section className="py-20 bg-gradient-to-b from-[#0f1f33] to-[#1e3a5f]">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <AnimatedSection>
             <h2 className="text-3xl font-bold text-white mb-4">Jetzt mehr Erfahren</h2>

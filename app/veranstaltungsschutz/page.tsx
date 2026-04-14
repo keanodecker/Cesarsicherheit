@@ -74,7 +74,7 @@ export default function VeranstaltungsschutzPage() {
       </section>
 
       {/* ── Section 3: Leistungen ── */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-to-b from-slate-200 to-white">
         <div className="max-w-6xl mx-auto px-6">
           <AnimatedSection>
             <h2 className="text-3xl font-bold text-primary mb-12 text-center underline decoration-accent underline-offset-8">
@@ -115,7 +115,7 @@ export default function VeranstaltungsschutzPage() {
       </section>
 
       {/* ── Section 4: Einlasskontrollen & VIP ── */}
-      <section className="py-20 bg-gradient-to-b from-gray-100 to-white">
+      <section className="py-20 bg-gradient-to-b from-white to-slate-100">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <SlideIn direction="left">
@@ -154,7 +154,7 @@ export default function VeranstaltungsschutzPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-20 bg-gradient-to-b from-white to-gray-100">
+      <section className="py-20 bg-gradient-to-b from-slate-100 to-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <AnimatedSection>
             <h2 className="text-3xl font-bold text-primary mb-4">Jetzt mehr Erfahren</h2>
