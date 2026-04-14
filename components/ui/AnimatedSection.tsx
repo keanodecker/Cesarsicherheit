@@ -12,11 +12,11 @@ interface AnimatedSectionProps {
 export function AnimatedSection({ children, className = "", delay = 0 }: AnimatedSectionProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ 
-        duration: 0.6, 
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{
+        duration: 0.9,
         delay,
         ease: [0.25, 0.1, 0.25, 1]
       }}
@@ -33,7 +33,7 @@ export function FadeIn({ children, className = "", delay = 0 }: AnimatedSectionP
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.8, delay }}
+      transition={{ duration: 1.0, delay }}
       className={className}
     >
       {children}
@@ -42,13 +42,13 @@ export function FadeIn({ children, className = "", delay = 0 }: AnimatedSectionP
 }
 
 export function SlideIn({ children, className = "", delay = 0, direction = "left" }: AnimatedSectionProps & { direction?: "left" | "right" }) {
-  const xOffset = direction === "left" ? -50 : 50;
+  const xOffset = direction === "left" ? -80 : 80;
   return (
     <motion.div
       initial={{ opacity: 0, x: xOffset }}
       whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay, ease: "easeOut" }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 1.0, delay, ease: [0.25, 0.1, 0.25, 1] }}
       className={className}
     >
       {children}
@@ -62,7 +62,7 @@ export function ScaleIn({ children, className = "", delay = 0 }: AnimatedSection
       initial={{ opacity: 0, scale: 0.9 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay }}
+      transition={{ duration: 0.8, delay }}
       className={className}
     >
       {children}

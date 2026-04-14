@@ -29,13 +29,10 @@ function AnimatedCounter({ target, suffix = "" }: { target: number; suffix?: str
 
 export default function UeberUnsPage() {
   return (
-    <div className="min-h-screen pb-20">
+    <div className="min-h-screen">
 
-      {/* ── Gradient Header Banner — fades to white so Geschäftsführer connects ── */}
-      <div className="h-40 bg-gradient-to-b from-slate-400 via-[#1e3a5f] to-white" />
-
-      {/* ── Geschäftsführer ── */}
-      <section className="py-16 bg-white">
+      {/* ── Geschäftsführer — dark gradient wie alle anderen Seiten ── */}
+      <section className="pt-24 pb-20 bg-gradient-to-b from-slate-400 via-[#1e3a5f] to-[#0f1f33]">
         <div className="max-w-6xl mx-auto px-6">
           <SlideIn direction="left">
             <div className="flex flex-col md:flex-row gap-10 items-start">
@@ -53,22 +50,22 @@ export default function UeberUnsPage() {
 
               {/* Text Content */}
               <div className="flex-1">
-                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
                   Geschäftsführer
                 </h1>
-                <p className="text-gray-800 leading-relaxed mb-4">
+                <p className="text-gray-200 leading-relaxed mb-4">
                   Sezer Ülker war 7 Jahre lang für den Sicherheitsdienst des Europarks und in verschiedenen
-                  anderen Betrieben als <strong className="underline">Bereichsleiter</strong> tätig. Bei der Durchführung diverser
+                  anderen Betrieben als <strong className="underline text-white">Bereichsleiter</strong> tätig. Bei der Durchführung diverser
                   Großprojekte, sowie im Arbeitsalltag im größten Freizeitpark Deutschlands, sammelte er die
                   nötige Erfahrung in den verschiedenen Arbeitsbereichen und Aufgabengebieten der
                   Sicherheitsbranche. Sezer Ülker hat, wie jeder seiner Mitarbeiter, eine{" "}
-                  <strong className="underline">umfangreiche und kompetente Aus- und Weiterbildung</strong>{" "}
+                  <strong className="underline text-white">umfangreiche und kompetente Aus- und Weiterbildung</strong>{" "}
                   genossen. Bestandteile dieser Ausbildung sind folgende Qualifikationen:
                 </p>
 
-                <p className="text-gray-800 font-medium mb-3">Aus – und Weiterbildung</p>
+                <p className="text-gray-100 font-medium mb-3">Aus – und Weiterbildung</p>
 
-                <ul className="space-y-2 text-gray-800">
+                <ul className="space-y-2">
                   {[
                     "Sicherheitsinspektor (SIKU)",
                     "Training im Umgang mit Konflikten (TuK)",
@@ -82,10 +79,10 @@ export default function UeberUnsPage() {
                       initial={{ opacity: 0, x: -10 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
-                      transition={{ delay: i * 0.07 }}
-                      className="flex items-start gap-2"
+                      transition={{ delay: i * 0.07, duration: 0.6 }}
+                      className="flex items-start gap-2 text-gray-200"
                     >
-                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-800 flex-shrink-0" />
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
                       <span className="underline underline-offset-2">{q}</span>
                     </motion.li>
                   ))}
@@ -97,23 +94,23 @@ export default function UeberUnsPage() {
       </section>
 
       {/* ── Unser Team ── */}
-      <section className="py-20 bg-gradient-to-b from-white to-slate-300">
+      <section className="py-24 bg-gradient-to-b from-[#0f1f33] via-[#1e3a5f] to-slate-400">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
             <SlideIn direction="left">
               <div>
-                <h2 className="text-3xl font-bold text-primary mb-6 underline decoration-accent underline-offset-8">
+                <h2 className="text-3xl font-bold text-white mb-6 underline decoration-accent underline-offset-8">
                   Unser Team
                 </h2>
-                <p className="text-gray-700 leading-relaxed mb-4">
+                <p className="text-gray-200 leading-relaxed mb-4">
                   Jeder unserer 80 Mitarbeiter ist höchst kompetent und hat Erfahrungen in der
                   Sicherheitsbranche, durch{" "}
-                  <strong>regelmäßige Fort- und Weiterbildungsmaßnahmen</strong> stellen wir sicher,
+                  <strong className="text-white">regelmäßige Fort- und Weiterbildungsmaßnahmen</strong> stellen wir sicher,
                   dass wir stets auf dem neusten Stand sind. Unsere Mitarbeiter erhalten Fortbildungen
                   im Bereich Selbstverteidigungs-, Sicherheitstechniken und absolvieren
                   Fahrsicherheitstrainings.
                 </p>
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-gray-200 leading-relaxed">
                   Durch die hohe Motivation jedes einzelnen Mitarbeiters können wir Ihnen die
                   bestmögliche Dienstleistung bieten, deshalb ist jeder unserer Mitarbeiter Cesar
                   Sicherheit.
@@ -121,7 +118,7 @@ export default function UeberUnsPage() {
               </div>
             </SlideIn>
             <SlideIn direction="right" delay={0.2}>
-              <div className="relative h-[380px] rounded-xl overflow-hidden shadow-2xl">
+              <div className="relative h-[400px] rounded-xl overflow-hidden shadow-2xl">
                 <Image src="/images/4.webp" alt="Unser Team" fill className="object-cover" />
               </div>
             </SlideIn>
@@ -130,7 +127,7 @@ export default function UeberUnsPage() {
       </section>
 
       {/* ── Stats ── */}
-      <section className="py-20 bg-gradient-to-b from-slate-300 via-[#1e3a5f] to-[#0f1f33] text-white">
+      <section className="py-20 bg-gradient-to-b from-slate-400 via-[#1e3a5f] to-[#0f1f33] text-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             {[
@@ -152,11 +149,11 @@ export default function UeberUnsPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-20 bg-gradient-to-b from-[#0f1f33] to-[#1e3a5f]">
+      <section className="py-24 bg-gradient-to-b from-[#0f1f33] via-[#1e3a5f] to-slate-400">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <AnimatedSection>
             <h2 className="text-3xl font-bold text-white mb-4">Jetzt mehr Erfahren</h2>
-            <p className="text-gray-300 mb-8">
+            <p className="text-gray-200 mb-8">
               Nehmen Sie jetzt Kontakt mit Uns auf um weitere Details zu besprechen.
             </p>
             <Link
