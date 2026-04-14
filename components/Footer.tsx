@@ -15,7 +15,7 @@ export default function Footer() {
             <div className="flex flex-col items-center md:items-start">
               <div className="relative h-24 w-40 mb-4">
                 <Image
-                  src="/images/logo.svg"
+                  src="/images/logo.png"
                   alt="Cesar Sicherheit"
                   fill
                   className="object-contain"

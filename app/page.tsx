@@ -2,9 +2,18 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { AnimatedSection, SlideIn } from "@/components/ui/AnimatedSection";
 import { Shield, Building, Star, MapPin } from "lucide-react";
+
+const SLIDES = [
+  "/images/slide-1.png",
+  "/images/slide-2.png",
+  "/images/slide-3.png",
+  "/images/slide-4.png",
+  "/images/slide-5.png",
+];
 
 const testimonials = [
   {
@@ -34,59 +43,90 @@ const testimonials = [
 ];
 
 export default function HomePage() {
+  const [current, setCurrent] = useState(0);
+  const [blurring, setBlurring] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Blur rein
+      setBlurring(true);
+      // Nach 500ms Bild wechseln und Blur wieder raus
+      setTimeout(() => {
+        setCurrent(c => (c + 1) % SLIDES.length);
+        setBlurring(false);
+      }, 500);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="min-h-screen">
 
-      {/* ── Hero: YouTube Video ── */}
-      {/* -mt-20 hebt den Hero hinter die fixe Navbar, sodass kein weißer Rand oben entsteht */}
-      <section className="relative w-full overflow-hidden -mt-20">
-        {/* 16:9 Video wrapper – scale-[1.04] versteckt YouTubes dünne schwarze Ränder */}
-        <div className="pointer-events-none w-full" style={{ paddingBottom: '56.25%', position: 'relative' }}>
-          <iframe
-            src="https://www.youtube.com/embed/1GHUCobXcKE?autoplay=1&mute=1&loop=1&playlist=1GHUCobXcKE&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
-            allow="autoplay; fullscreen"
-            className="absolute inset-0 w-full h-full scale-[1.04] origin-center"
-            style={{ border: 0 }}
+      {/* ── Hero: Bildslideshow ── */}
+      <section className="relative w-full h-[600px] md:h-[700px] overflow-hidden -mt-20">
+        {/* Slideshow Hintergrundbild */}
+        <div
+          className="absolute inset-0 transition-all duration-500"
+          style={{ filter: blurring ? 'blur(12px)' : 'blur(0px)', transform: blurring ? 'scale(1.05)' : 'scale(1)' }}
+        >
+          <Image
+            src={SLIDES[current]}
+            alt="Cesar Sicherheit"
+            fill
+            className="object-cover"
+            priority
           />
         </div>
-        {/* Dunkles Vignette-Overlay – passend zum Screenshot */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a1628]/85 via-[#0f1f33]/55 to-[#0a1628]/85" />
+
+        {/* Dunkles Vignette-Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a1628]/80 via-[#0f1f33]/50 to-[#0a1628]/80" />
+
+        {/* Slide-Indikatoren */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+          {SLIDES.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${i === current ? 'bg-accent w-6' : 'bg-white/50'}`}
+            />
+          ))}
+        </div>
 
         {/* Hero Content */}
         <div className="absolute inset-0 z-10 flex items-center justify-center">
-        <div className="text-center px-4 max-w-4xl mx-auto">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 text-shadow"
-          >
-            Bewacht und beschützt was Ihnen wichtig ist.
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg md:text-xl text-gray-200 mb-8"
-          >
-            Cesar Sicherheit steht für Ehrlichkeit, Zuverlässigkeit und Diskretion.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-          >
-            <Link
-              href="/kontakt"
-              className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg"
+          <div className="text-center px-4 max-w-4xl mx-auto">
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 text-shadow"
             >
-              <Shield size={20} />
-              Jetzt unverbindliches Angebot einholen
-            </Link>
-          </motion.div>
-        </div>
+              Bewacht und beschützt was Ihnen wichtig ist.
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-lg md:text-xl text-gray-200 mb-8"
+            >
+              Cesar Sicherheit steht für Ehrlichkeit, Zuverlässigkeit und Diskretion.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+            >
+              <Link
+                href="/kontakt"
+                className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              >
+                <Shield size={20} />
+                Jetzt unverbindliches Angebot einholen
+              </Link>
+            </motion.div>
+          </div>
         </div>
       </section>
 
