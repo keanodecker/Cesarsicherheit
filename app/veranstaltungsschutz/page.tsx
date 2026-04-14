@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { AnimatedSection, SlideIn } from "@/components/ui/AnimatedSection";
 import { Check, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function VeranstaltungsschutzPage() {
   return (
