@@ -29,18 +29,23 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // All pages: transparent when at top (dark gradient sections visible behind nav),
-  // semi-dark when scrolled on home, white when scrolled on other pages
+  // Transparent at top on all pages (dark gradient flows behind nav).
+  // When scrolled: home stays dark, other pages go white with dark text.
   const navBg = isScrolled
     ? (isHome
         ? "bg-[#0f1f33]/90 backdrop-blur-md shadow-lg py-2"
-        : "bg-[#0f1f33]/90 backdrop-blur-md shadow-lg py-2")
+        : "bg-white/95 backdrop-blur-md shadow-lg py-2")
     : "bg-transparent py-2";
 
-  // Always white text — all pages start with dark gradient behind transparent navbar
-  const linkColor = "text-white hover:text-accent";
-  const mobileMenuBg = "bg-[#0f1f33]";
-  const mobileLinkColor = "text-white hover:text-accent border-white/20";
+  // White text when transparent or on dark home bg; dark primary text on white scrolled nav.
+  const linkColor = isScrolled && !isHome
+    ? "text-[#1e3a5f] hover:text-accent"
+    : "text-white hover:text-accent";
+  const mobileMenuBg = isScrolled && !isHome ? "bg-white" : "bg-[#0f1f33]";
+  const mobileLinkColor = isScrolled && !isHome
+    ? "text-[#1e3a5f] hover:text-accent border-gray-100"
+    : "text-white hover:text-accent border-white/20";
+  const mobileButtonColor = isScrolled && !isHome ? "text-[#1e3a5f]" : "text-white";
 
   return (
     <>
@@ -81,7 +86,7 @@ export default function Navbar() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 text-white"
+              className={`lg:hidden p-2 ${mobileButtonColor}`}
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
