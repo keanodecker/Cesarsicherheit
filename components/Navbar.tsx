@@ -29,23 +29,26 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Transparent at top on all pages (dark gradient flows behind nav).
-  // When scrolled: home stays dark, other pages go white with dark text.
+  // Home: fully transparent at top, dark/90 when scrolled.
+  // Other pages: semi-dark tint at top (keeps white text readable against any background),
+  //              white/95 when scrolled (dark blue text).
   const navBg = isScrolled
     ? (isHome
         ? "bg-[#0f1f33]/90 backdrop-blur-md shadow-lg py-2"
         : "bg-white/95 backdrop-blur-md shadow-lg py-2")
-    : "bg-transparent py-2";
+    : (isHome
+        ? "bg-transparent py-2"
+        : "bg-[#0f1f33]/50 backdrop-blur-sm py-2");
 
-  // White text when transparent or on dark home bg; dark primary text on white scrolled nav.
-  const linkColor = isScrolled && !isHome
-    ? "text-[#1e3a5f] hover:text-accent"
-    : "text-white hover:text-accent";
-  const mobileMenuBg = isScrolled && !isHome ? "bg-white" : "bg-[#0f1f33]";
-  const mobileLinkColor = isScrolled && !isHome
+  // Text color — both variants have transition-colors on the link element itself
+  // so the colour fades smoothly when the navbar background changes.
+  const isWhiteNav = isScrolled && !isHome;
+  const linkColor = isWhiteNav ? "text-[#1e3a5f]" : "text-white";
+  const mobileMenuBg = isWhiteNav ? "bg-white" : "bg-[#0f1f33]";
+  const mobileLinkColor = isWhiteNav
     ? "text-[#1e3a5f] hover:text-accent border-gray-100"
     : "text-white hover:text-accent border-white/20";
-  const mobileButtonColor = isScrolled && !isHome ? "text-[#1e3a5f]" : "text-white";
+  const mobileButtonColor = isWhiteNav ? "text-[#1e3a5f]" : "text-white";
 
   return (
     <>
@@ -76,7 +79,7 @@ export default function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`text-sm font-medium transition-colors duration-200 tracking-wide ${linkColor}`}
+                  className={`text-sm font-medium transition-colors duration-300 tracking-wide hover:text-accent ${linkColor}`}
                 >
                   {item.name}
                 </Link>
