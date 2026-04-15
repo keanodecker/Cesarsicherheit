@@ -38,39 +38,37 @@ export default function ObjektschutzPage() {
         </div>
       </section>
 
-      {/* ── Section 2: Ruhig schlafen — Bild LEFT, Text RIGHT ── */}
+      {/* ── Section 2: Ruhig schlafen — Bild vollbreite, Text darunter ── */}
       <section className="py-24 bg-gradient-to-b from-[#0f1f33] via-[#1e3a5f] to-slate-400">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <SlideIn direction="left">
-              <div className="relative h-[480px] rounded-xl overflow-hidden shadow-2xl">
-                <Image src="/images/10.png" alt="Sicherheitskonzept" fill className="object-cover" />
-              </div>
-            </SlideIn>
-            <SlideIn direction="right" delay={0.2}>
-              <div>
-                <p className="text-white leading-relaxed mb-6 text-lg">
-                  Cesar Sicherheit sorgt dafür, dass Sie endlich wieder{" "}
-                  <strong className="underline">ruhig schlafen</strong> können und Sie sich nach
-                  Feierabend <strong className="underline">keine Gedanken</strong> mehr um die
-                  Sicherheit Ihres Objekts machen müssen.
-                </p>
-                <p className="text-gray-200 leading-relaxed mb-8 text-lg">
-                  <strong>Wir bieten Ihnen</strong> komplette Sicherheitslösungen aus einer Hand an,
-                  von Zugangs- und Zufahrtskontrolle, über Alarmaufschaltungen, bis hin zu Gebäude
-                  und Gelände Bestreifung. Cesar Sicherheit verfügt über kompetentes und geschultes
-                  Personal, für sowohl Sicherheits- als auch Empfangsdienste in Ihrem Objekt.
-                </p>
-                <Link
-                  href="/kontakt"
-                  className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 hover:scale-105"
-                >
-                  Jetzt Kontaktieren
-                  <ArrowRight size={18} />
-                </Link>
-              </div>
-            </SlideIn>
-          </div>
+          <AnimatedSection>
+            <div className="relative w-full h-[520px] rounded-xl overflow-hidden shadow-2xl mb-12">
+              <Image src="/images/10.png" alt="Sicherheitskonzept" fill className="object-cover" />
+            </div>
+          </AnimatedSection>
+          <SlideIn direction="left" delay={0.2}>
+            <div className="max-w-3xl">
+              <p className="text-white leading-relaxed mb-6 text-lg">
+                Cesar Sicherheit sorgt dafür, dass Sie endlich wieder{" "}
+                <strong className="underline">ruhig schlafen</strong> können und Sie sich nach
+                Feierabend <strong className="underline">keine Gedanken</strong> mehr um die
+                Sicherheit Ihres Objekts machen müssen.
+              </p>
+              <p className="text-gray-200 leading-relaxed mb-8 text-lg">
+                <strong>Wir bieten Ihnen</strong> komplette Sicherheitslösungen aus einer Hand an,
+                von Zugangs- und Zufahrtskontrolle, über Alarmaufschaltungen, bis hin zu Gebäude
+                und Gelände Bestreifung. Cesar Sicherheit verfügt über kompetentes und geschultes
+                Personal, für sowohl Sicherheits- als auch Empfangsdienste in Ihrem Objekt.
+              </p>
+              <Link
+                href="/kontakt"
+                className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 hover:scale-105"
+              >
+                Jetzt Kontaktieren
+                <ArrowRight size={18} />
+              </Link>
+            </div>
+          </SlideIn>
         </div>
       </section>
 

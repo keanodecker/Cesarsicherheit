@@ -15,6 +15,11 @@ export default function VeranstaltungsschutzPage() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <SlideIn direction="left">
+              <div className="relative h-[420px] rounded-xl overflow-hidden shadow-2xl">
+                <Image src="/images/5.png" alt="Veranstaltungsplanung" fill className="object-cover" />
+              </div>
+            </SlideIn>
+            <SlideIn direction="right" delay={0.2}>
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
                   Veranstaltungsschutz
@@ -27,11 +32,6 @@ export default function VeranstaltungsschutzPage() {
                   einfach entspannt zurücklehnen und den Abend genießen, oder sind anderweitig so
                   eingebunden, dass sie keine Zeit mehr für die Sicherheit finden?
                 </p>
-              </div>
-            </SlideIn>
-            <SlideIn direction="right" delay={0.2}>
-              <div className="relative h-[420px] rounded-xl overflow-hidden shadow-2xl">
-                <Image src="/images/5.png" alt="Veranstaltungsplanung" fill className="object-cover" />
               </div>
             </SlideIn>
           </div>
