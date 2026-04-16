@@ -27,7 +27,7 @@ export default function DatenschutzPage() {
                   <p>Doler Platz 3</p>
                   <p>77933 Lahr/Schwarzwald</p>
                   <p className="mt-2">Telefon: +49 (0)7821 / 502 09 62</p>
-                  <p>E-Mail: mail@cesardienstleistungen.de</p>
+                  <p>E-Mail: kontakt@cesarsicherheit.de</p>
                 </div>
               </div>
 

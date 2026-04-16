@@ -39,7 +39,7 @@ export default function ImpressumPage() {
                 <div className="space-y-1">
                   <p>Telefon: +49 (0)7821 / 502 09 62</p>
                   <p>Mobil: +49 (0)174 / 980 45 14</p>
-                  <p>E-Mail: mail@cesardienstleistungen.de</p>
+                  <p>E-Mail: kontakt@cesarsicherheit.de</p>
                 </div>
               </div>
 
