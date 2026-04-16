@@ -31,7 +31,7 @@ export default function ObjektschutzPage() {
             </SlideIn>
             <SlideIn direction="right" delay={0.2} duration={0.55}>
               <div className="relative h-[420px] rounded-xl overflow-hidden shadow-2xl">
-                <Image src="/images/9.png" alt="Objektschutz" fill className="object-cover" />
+                <Image src="/images/9.webp" alt="Objektschutz" fill className="object-cover" />
               </div>
             </SlideIn>
           </div>
@@ -44,7 +44,7 @@ export default function ObjektschutzPage() {
           <div className="grid md:grid-cols-5 gap-12 items-center">
             <SlideIn direction="left" duration={0.55} className="md:col-span-3">
               <div className="relative w-full h-[400px] rounded-xl overflow-hidden shadow-2xl">
-                <Image src="/images/10.png" alt="Sicherheitskonzept" fill className="object-cover" />
+                <Image src="/images/10.webp" alt="Sicherheitskonzept" fill className="object-cover" />
               </div>
             </SlideIn>
             <SlideIn direction="right" delay={0.2} className="md:col-span-2">

@@ -8,11 +8,11 @@ import { AnimatedSection, SlideIn } from "@/components/ui/AnimatedSection";
 import { Shield, Building, Star, MapPin } from "lucide-react";
 
 const SLIDES = [
-  "/images/slide-1.png",
-  "/images/slide-2.png",
-  "/images/slide-3.png",
-  "/images/slide-4.png",
-  "/images/slide-5.png",
+  "/images/slide-1.webp",
+  "/images/slide-2.webp",
+  "/images/slide-3.webp",
+  "/images/slide-4.webp",
+  "/images/slide-5.webp",
 ];
 
 const testimonials = [
@@ -133,7 +133,7 @@ export default function HomePage() {
               <Link href="/veranstaltungsschutz" className="group block">
                 <div className="relative h-[480px] rounded-xl overflow-hidden shadow-2xl image-hover">
                   <Image
-                    src="/images/1.png"
+                    src="/images/1.webp"
                     alt="Veranstaltungsschutz"
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -158,7 +158,7 @@ export default function HomePage() {
               <Link href="/objektschutz" className="group block">
                 <div className="relative h-[480px] rounded-xl overflow-hidden shadow-2xl image-hover">
                   <Image
-                    src="/images/2.png"
+                    src="/images/2.webp"
                     alt="Objektschutz"
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
