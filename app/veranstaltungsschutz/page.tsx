@@ -16,7 +16,7 @@ export default function VeranstaltungsschutzPage() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <SlideIn direction="left" duration={0.55}>
               <div className="relative h-[420px] rounded-xl overflow-hidden shadow-2xl">
-                <Image src="/images/5.png" alt="Veranstaltungsplanung" fill className="object-cover" />
+                <Image src="/images/5.webp" alt="Veranstaltungsplanung" fill className="object-cover" />
               </div>
             </SlideIn>
             <SlideIn direction="right" delay={0.2}>
@@ -66,7 +66,7 @@ export default function VeranstaltungsschutzPage() {
             </SlideIn>
             <SlideIn direction="right" delay={0.2} duration={0.55}>
               <div className="relative h-[420px] rounded-xl overflow-hidden shadow-2xl">
-                <Image src="/images/6.png" alt="Sicherheitspersonal" fill className="object-cover" />
+                <Image src="/images/6.webp" alt="Sicherheitspersonal" fill className="object-cover" />
               </div>
             </SlideIn>
           </div>
@@ -121,10 +121,10 @@ export default function VeranstaltungsschutzPage() {
             <SlideIn direction="left" duration={0.55}>
               <div className="space-y-8">
                 <div className="relative h-[340px] rounded-xl overflow-hidden shadow-2xl">
-                  <Image src="/images/7.png" alt="Einlasskontrolle" fill className="object-cover" />
+                  <Image src="/images/7.webp" alt="Einlasskontrolle" fill className="object-cover" />
                 </div>
                 <div className="relative h-[340px] rounded-xl overflow-hidden shadow-2xl">
-                  <Image src="/images/8.jpg" alt="Backstage Schutz" fill className="object-cover" />
+                  <Image src="/images/8.webp" alt="Backstage Schutz" fill className="object-cover" />
                 </div>
               </div>
             </SlideIn>
