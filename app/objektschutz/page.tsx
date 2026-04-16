@@ -29,7 +29,7 @@ export default function ObjektschutzPage() {
                 </p>
               </div>
             </SlideIn>
-            <SlideIn direction="right" delay={0.2}>
+            <SlideIn direction="right" delay={0.2} duration={0.55}>
               <div className="relative h-[420px] rounded-xl overflow-hidden shadow-2xl">
                 <Image src="/images/9.png" alt="Objektschutz" fill className="object-cover" />
               </div>
@@ -42,7 +42,7 @@ export default function ObjektschutzPage() {
       <section className="py-24 bg-gradient-to-b from-[#0f1f33] via-[#1e3a5f] to-slate-400">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-5 gap-12 items-center">
-            <SlideIn direction="left" className="md:col-span-3">
+            <SlideIn direction="left" duration={0.55} className="md:col-span-3">
               <div className="relative w-full h-[400px] rounded-xl overflow-hidden shadow-2xl">
                 <Image src="/images/10.png" alt="Sicherheitskonzept" fill className="object-cover" />
               </div>
