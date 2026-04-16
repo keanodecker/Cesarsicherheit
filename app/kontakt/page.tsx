@@ -7,11 +7,26 @@ import { motion } from "framer-motion";
 
 export default function KontaktPage() {
   const [formData, setFormData] = useState({ name: "", email: "", telefon: "", nachricht: "" });
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Formular gesendet:", formData);
-    alert("Vielen Dank für Ihre Nachricht! Wir werden uns schnellstmöglich bei Ihnen melden.");
+    setStatus("sending");
+    try {
+      const res = await fetch("/api/kontakt", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (res.ok) {
+        setStatus("success");
+        setFormData({ name: "", email: "", telefon: "", nachricht: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -124,13 +139,24 @@ export default function KontaktPage() {
                     />
                   </div>
 
+                  {status === "success" && (
+                    <div className="text-green-700 bg-green-100 border border-green-300 rounded-lg px-4 py-3 text-center font-medium">
+                      Vielen Dank! Ihre Nachricht wurde gesendet. Wir melden uns schnellstmöglich.
+                    </div>
+                  )}
+                  {status === "error" && (
+                    <div className="text-red-700 bg-red-100 border border-red-300 rounded-lg px-4 py-3 text-center font-medium">
+                      Fehler beim Senden. Bitte versuchen Sie es erneut oder rufen Sie uns an.
+                    </div>
+                  )}
                   <motion.button
                     type="submit"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="w-full bg-accent hover:bg-accent-hover text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 text-lg"
+                    disabled={status === "sending"}
+                    whileHover={{ scale: status === "sending" ? 1 : 1.02 }}
+                    whileTap={{ scale: status === "sending" ? 1 : 0.98 }}
+                    className="w-full bg-accent hover:bg-accent-hover text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 text-lg disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    Abschicken
+                    {status === "sending" ? "Wird gesendet..." : "Abschicken"}
                   </motion.button>
                 </form>
               </div>

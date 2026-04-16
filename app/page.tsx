@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { AnimatedSection, SlideIn } from "@/components/ui/AnimatedSection";
 import { Shield, Building, Star, MapPin } from "lucide-react";
 
@@ -58,24 +58,30 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
 
-      {/* ── Hero: Bildslideshow (cross-fade) ── */}
+      {/* ── Hero: Bildslideshow (cross-fade + Ken Burns zoom) ── */}
       <section className="relative w-full h-[600px] md:h-[700px] overflow-hidden -mt-20">
-        {/* Stacked slides — each fades in/out via opacity */}
-        {SLIDES.map((src, i) => (
-          <div
-            key={src}
-            className="absolute inset-0 transition-opacity duration-1000"
-            style={{ opacity: i === current ? 1 : 0 }}
+        {/* AnimatePresence: proper enter/exit per slide — no stacking artifacts */}
+        <AnimatePresence initial={false}>
+          <motion.div
+            key={current}
+            initial={{ opacity: 0, scale: 1 }}
+            animate={{ opacity: 1, scale: 1.08 }}
+            exit={{ opacity: 0, scale: 1.08 }}
+            transition={{
+              opacity: { duration: 1.2, ease: "easeInOut" },
+              scale: { duration: 5.5, ease: "linear" },
+            }}
+            className="absolute inset-0"
           >
             <Image
-              src={src}
+              src={SLIDES[current]}
               alt="Cesar Sicherheit"
               fill
               className="object-cover"
-              priority={i === 0}
+              priority
             />
-          </div>
-        ))}
+          </motion.div>
+        </AnimatePresence>
 
         {/* Dunkles Vignette-Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a1628]/80 via-[#0f1f33]/50 to-[#0a1628]/80 z-10" />
