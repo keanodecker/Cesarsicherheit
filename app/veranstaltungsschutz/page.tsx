@@ -14,7 +14,7 @@ export default function VeranstaltungsschutzPage() {
       <section className="py-20 bg-gradient-to-b from-slate-400 via-[#1e3a5f] to-[#0f1f33]">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
-            <SlideIn direction="left">
+            <SlideIn direction="left" duration={0.55}>
               <div className="relative h-[420px] rounded-xl overflow-hidden shadow-2xl">
                 <Image src="/images/5.png" alt="Veranstaltungsplanung" fill className="object-cover" />
               </div>
@@ -64,7 +64,7 @@ export default function VeranstaltungsschutzPage() {
                 </Link>
               </div>
             </SlideIn>
-            <SlideIn direction="right" delay={0.2}>
+            <SlideIn direction="right" delay={0.2} duration={0.55}>
               <div className="relative h-[420px] rounded-xl overflow-hidden shadow-2xl">
                 <Image src="/images/6.png" alt="Sicherheitspersonal" fill className="object-cover" />
               </div>
@@ -118,7 +118,7 @@ export default function VeranstaltungsschutzPage() {
       <section className="py-24 bg-gradient-to-b from-[#0f1f33] via-[#1e3a5f] to-slate-400">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-16 items-start">
-            <SlideIn direction="left">
+            <SlideIn direction="left" duration={0.55}>
               <div className="space-y-8">
                 <div className="relative h-[340px] rounded-xl overflow-hidden shadow-2xl">
                   <Image src="/images/7.png" alt="Einlasskontrolle" fill className="object-cover" />

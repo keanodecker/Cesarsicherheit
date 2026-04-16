@@ -41,14 +41,14 @@ export function FadeIn({ children, className = "", delay = 0 }: AnimatedSectionP
   );
 }
 
-export function SlideIn({ children, className = "", delay = 0, direction = "left" }: AnimatedSectionProps & { direction?: "left" | "right" }) {
+export function SlideIn({ children, className = "", delay = 0, direction = "left", duration = 1.0 }: AnimatedSectionProps & { direction?: "left" | "right"; duration?: number }) {
   const xOffset = direction === "left" ? -80 : 80;
   return (
     <motion.div
       initial={{ opacity: 0, x: xOffset }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 1.0, delay, ease: [0.25, 0.1, 0.25, 1] }}
+      transition={{ duration, delay, ease: [0.25, 0.1, 0.25, 1] }}
       className={className}
     >
       {children}
