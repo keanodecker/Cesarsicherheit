@@ -7,8 +7,8 @@ export const metadata: Metadata = {
   title: "Cesar Sicherheit | Professionelle Sicherheitsdienste",
   description: "Cesar Sicherheit steht für Ehrlichkeit, Zuverlässigkeit und Diskretion. Wir bieten Veranstaltungsschutz und Objektschutz in Lahr und Umgebung.",
   icons: {
-    icon: "/images/logo.png",
-    apple: "/images/logo.png",
+    icon: "/images/favicon-icon.png",
+    apple: "/images/favicon-icon.png",
   },
 };
 
