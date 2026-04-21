@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
   try {
     await resend.emails.send({
       from: "Cesar Sicherheit <kontaktformular@cesarsicherheit.de>",
-      to: "info@keanodecker.com",
+      to: "kontakt@cesarsicherheit.de",
       replyTo: email,
       subject: `Neue Kontaktanfrage von ${name}`,
       html: `

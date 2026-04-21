@@ -86,6 +86,9 @@ export default function HomePage() {
         {/* Dunkles Vignette-Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a1628]/80 via-[#0f1f33]/50 to-[#0a1628]/80 z-10" />
 
+        {/* Smooth Fade in die nächste Sektion (slate-400) */}
+        <div className="absolute bottom-0 left-0 right-0 h-48 md:h-56 bg-gradient-to-b from-transparent via-slate-400/40 to-slate-400 z-10 pointer-events-none" />
+
         {/* Hero Content */}
         <div className="absolute inset-0 z-20 flex items-center justify-center">
           <div className="text-center px-4 max-w-4xl mx-auto">
