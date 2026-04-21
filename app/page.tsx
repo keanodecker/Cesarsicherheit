@@ -87,7 +87,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a1628]/80 via-[#0f1f33]/50 to-[#0a1628]/80 z-10" />
 
         {/* Smooth Fade in die nächste Sektion (slate-400) */}
-        <div className="absolute bottom-0 left-0 right-0 h-48 md:h-56 bg-gradient-to-b from-transparent via-slate-400/40 to-slate-400 z-10 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-20 md:h-24 bg-gradient-to-b from-transparent to-slate-400 z-10 pointer-events-none" />
 
         {/* Hero Content */}
         <div className="absolute inset-0 z-20 flex items-center justify-center">
