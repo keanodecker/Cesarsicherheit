@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { AnimatedSection } from "./ui/AnimatedSection";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Smartphone, Mail, MapPin } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -45,11 +45,11 @@ export default function Footer() {
                 </li>
                 <li className="flex items-center justify-center md:justify-start gap-2">
                   <Phone size={16} className="text-accent" />
-                  <span>Tel: (+49) 7821/502 09 62</span>
+                  <span>+49 (0)7821 / 502 09 62</span>
                 </li>
                 <li className="flex items-center justify-center md:justify-start gap-2">
-                  <Phone size={16} className="text-accent" />
-                  <span>Mobil: +49 (0) 174 9804514</span>
+                  <Smartphone size={16} className="text-accent" />
+                  <span>+49 (0)174 / 980 45 14</span>
                 </li>
                 <li className="flex items-center justify-center md:justify-start gap-2">
                   <MapPin size={16} className="text-accent" />

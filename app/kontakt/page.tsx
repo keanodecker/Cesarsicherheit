@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { SlideIn } from "@/components/ui/AnimatedSection";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Smartphone, Mail, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function KontaktPage() {
@@ -65,11 +65,11 @@ export default function KontaktPage() {
                 <div className="space-y-3 text-white">
                   <div className="flex items-center gap-3">
                     <Phone size={18} className="text-accent flex-shrink-0" />
-                    <span>(+49) 7821 / 502 09 62</span>
+                    <span>+49 (0)7821 / 502 09 62</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <Phone size={18} className="text-accent flex-shrink-0" />
-                    <span>+49 (0) 174 9804514</span>
+                    <Smartphone size={18} className="text-accent flex-shrink-0" />
+                    <span>+49 (0)174 / 980 45 14</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Mail size={18} className="text-accent flex-shrink-0" />
