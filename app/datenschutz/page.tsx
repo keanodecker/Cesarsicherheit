@@ -1,4 +1,5 @@
 import { SlideIn, AnimatedSection } from "@/components/ui/AnimatedSection";
+import CookieSettingsButton from "@/components/CookieSettingsButton";
 
 export const metadata = {
   title: "Datenschutz | Cesar Sicherheit",
@@ -121,11 +122,33 @@ export default function DatenschutzPage() {
 
               {/* Cookies */}
               <div>
-                <h2 className="text-xl font-semibold text-white mb-3">Cookies</h2>
-                <p className="leading-relaxed">
-                  Diese Website verwendet keine Tracking-Cookies oder Analyse-Tools von
-                  Drittanbietern. Es werden ausschließlich technisch notwendige Daten zur
-                  Bereitstellung der Website verarbeitet.
+                <h2 className="text-xl font-semibold text-white mb-3">Cookies & Einwilligungsverwaltung</h2>
+                <p className="leading-relaxed mb-4">
+                  Diese Website verwendet Cookies. Beim ersten Besuch wird Ihnen ein Cookie-Banner angezeigt,
+                  über den Sie Ihre Einwilligung für optionale Cookie-Kategorien erteilen oder verweigern können.
+                  Ihre Auswahl wird im LocalStorage Ihres Browsers gespeichert (Schlüssel: <code className="text-accent">cookieConsent</code>).
+                </p>
+                <p className="text-white font-medium mb-3">Wir unterscheiden folgende Kategorien:</p>
+                <div className="space-y-3 mb-4">
+                  {[
+                    { name: "Notwendige Cookies", desc: "Technisch erforderlich für Grundfunktionen der Website (z.B. Navigation, Sicherheit). Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO. Können nicht abgewählt werden.", always: true },
+                    { name: "Funktionale Cookies", desc: "Ermöglichen erweiterte Funktionen und Personalisierung. Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Aktuell nicht aktiv.", always: false },
+                    { name: "Analyse-Cookies", desc: "Helfen uns zu verstehen, wie Besucher die Website nutzen (z.B. Google Analytics). Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Aktuell nicht aktiv.", always: false },
+                    { name: "Marketing-Cookies", desc: "Werden für personalisierte Werbung genutzt (z.B. Meta Pixel). Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Aktuell nicht aktiv.", always: false },
+                  ].map(c => (
+                    <div key={c.name} className="bg-white/5 rounded-lg p-3">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-white font-medium text-sm">{c.name}</span>
+                        {c.always && <span className="text-accent text-xs font-semibold">Immer aktiv</span>}
+                      </div>
+                      <p className="text-gray-400 text-xs leading-relaxed">{c.desc}</p>
+                    </div>
+                  ))}
+                </div>
+                <p className="leading-relaxed mb-3">
+                  <strong className="text-white">Einwilligung widerrufen:</strong> Sie können Ihre Cookie-Einstellungen
+                  jederzeit ändern, indem Sie auf den Link <CookieSettingsButton /> im Footer dieser Website klicken. Alternativ können Sie den LocalStorage-Eintrag{" "}
+                  <code className="text-accent">cookieConsent</code> in den Entwicklertools Ihres Browsers löschen.
                 </p>
               </div>
 

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { AnimatedSection } from "./ui/AnimatedSection";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Smartphone, Mail, MapPin } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -45,11 +45,11 @@ export default function Footer() {
                 </li>
                 <li className="flex items-center justify-center md:justify-start gap-2">
                   <Phone size={16} className="text-accent" />
-                  <span>Tel: (+49) 7821/502 09 62</span>
+                  <span>+49 (0)7821 / 502 09 62</span>
                 </li>
                 <li className="flex items-center justify-center md:justify-start gap-2">
-                  <Phone size={16} className="text-accent" />
-                  <span>Mobil: +49 (0) 174 9804514</span>
+                  <Smartphone size={16} className="text-accent" />
+                  <span>+49 (0)174 / 980 45 14</span>
                 </li>
                 <li className="flex items-center justify-center md:justify-start gap-2">
                   <MapPin size={16} className="text-accent" />
@@ -60,10 +60,17 @@ export default function Footer() {
           </div>
 
           <div className="mt-8 pt-8 border-t border-gray-200 text-center text-sm text-gray-500">
-            <div className="flex justify-center gap-4 mb-2">
+            <div className="flex justify-center gap-4 mb-2 flex-wrap">
               <Link href="/impressum" className="hover:text-primary">Impressum</Link>
               <span>|</span>
               <Link href="/datenschutz" className="hover:text-primary">Datenschutz</Link>
+              <span>|</span>
+              <button
+                onClick={() => document.dispatchEvent(new Event("openCookieSettings"))}
+                className="hover:text-primary transition-colors"
+              >
+                Cookie-Einstellungen
+              </button>
             </div>
             <p>&copy; {new Date().getFullYear()} Cesar Sicherheit. Alle Rechte vorbehalten.</p>
           </div>
