@@ -40,7 +40,7 @@ export default function UeberUnsPage() {
               <div className="flex-shrink-0">
                 <div className="relative w-40 h-52 md:w-48 md:h-64 rounded-lg overflow-hidden shadow-xl">
                   <Image
-                    src="/images/3.webp"
+                    src="/images/sezer-ulker.webp"
                     alt="Sezer Ülker – Geschäftsführer"
                     fill
                     className="object-cover object-top"
