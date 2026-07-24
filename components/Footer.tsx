@@ -78,20 +78,25 @@ export default function Footer() {
               href="https://media-castle.de"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 inline-flex items-center gap-2 no-underline hover:opacity-85 transition-opacity"
+              className="mt-4 inline-flex items-center gap-2.5 no-underline hover:opacity-85 transition-opacity"
               style={{ fontFamily: "'Poppins', system-ui, sans-serif" }}
             >
               <Image
                 src="/images/media-castle-logo-navy.png"
                 alt="Media Castle"
-                width={18}
-                height={18}
+                width={30}
+                height={30}
               />
-              <span className="text-[13px] font-normal" style={{ color: "rgba(4,24,51,.55)" }}>
-                visualized by
-              </span>
-              <span className="text-[13px] font-semibold" style={{ color: "#041833" }}>
-                media castle
+              <span className="flex flex-col leading-none text-left">
+                <span
+                  className="text-[9px] font-medium uppercase"
+                  style={{ letterSpacing: "2.2px", color: "rgba(4,24,51,.55)" }}
+                >
+                  visualized by
+                </span>
+                <span className="text-[15px] font-semibold" style={{ color: "#041833" }}>
+                  media castle
+                </span>
               </span>
             </a>
           </div>
