@@ -87,7 +87,7 @@ input, textarea {
 }
 
 .review-track {
-  animation: reviewScroll 24s linear infinite;
+  animation: reviewScroll 54s linear infinite;
 }
 
 .review-track:hover {
