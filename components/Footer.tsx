@@ -73,6 +73,27 @@ export default function Footer() {
               </button>
             </div>
             <p>&copy; {new Date().getFullYear()} Cesar Sicherheit. Alle Rechte vorbehalten.</p>
+
+            <a
+              href="https://media-castle.de"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-flex items-center gap-2 no-underline hover:opacity-85 transition-opacity"
+              style={{ fontFamily: "'Poppins', system-ui, sans-serif" }}
+            >
+              <Image
+                src="/images/media-castle-logo-navy.png"
+                alt="Media Castle"
+                width={18}
+                height={18}
+              />
+              <span className="text-[13px] font-normal" style={{ color: "rgba(4,24,51,.55)" }}>
+                visualized by
+              </span>
+              <span className="text-[13px] font-semibold" style={{ color: "#041833" }}>
+                media castle
+              </span>
+            </a>
           </div>
         </AnimatedSection>
       </div>
