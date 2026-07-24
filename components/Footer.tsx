@@ -74,27 +74,34 @@ export default function Footer() {
             </div>
             <p>&copy; {new Date().getFullYear()} Cesar Sicherheit. Alle Rechte vorbehalten.</p>
 
+            {/* visualized by media castle — gestapelte Signatur */}
             <a
-              href="https://media-castle.de"
+              href="https://www.media-castle.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-flex items-center gap-2.5 no-underline hover:opacity-85 transition-opacity"
-              style={{ fontFamily: "'Poppins', system-ui, sans-serif" }}
+              aria-label="visualized by media castle – zur Media Castle Webseite"
+              className="mt-4 inline-flex items-center gap-3 no-underline transition-opacity duration-300 hover:opacity-85"
+              style={{ fontFamily: "Poppins, system-ui, sans-serif" }}
             >
-              <Image
-                src="/images/media-castle-logo-navy.png"
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/media-castle-logo.png"
                 alt="Media Castle"
-                width={30}
-                height={30}
+                width={34}
+                height={34}
+                className="flex-shrink-0"
               />
-              <span className="flex flex-col leading-none text-left">
+              <span className="flex flex-col text-left" style={{ lineHeight: 1.02 }}>
                 <span
-                  className="text-[9px] font-medium uppercase"
-                  style={{ letterSpacing: "2.2px", color: "rgba(4,24,51,.55)" }}
+                  className="font-medium uppercase"
+                  style={{ fontSize: "9px", letterSpacing: "2.5px", color: "rgba(4,24,51,.55)" }}
                 >
                   visualized by
                 </span>
-                <span className="text-[15px] font-semibold" style={{ color: "#041833" }}>
+                <span
+                  className="font-semibold"
+                  style={{ fontSize: "22px", letterSpacing: "-0.3px", color: "#041833" }}
+                >
                   media castle
                 </span>
               </span>
