@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { AnimatedSection, SlideIn } from "@/components/ui/AnimatedSection";
+import { AiLabel } from "@/components/ui/AiLabel";
 import { Shield, Building, Star, MapPin } from "lucide-react";
 
 const SLIDES = [
@@ -86,6 +87,13 @@ export default function HomePage() {
         {/* Dunkles Vignette-Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a1628]/80 via-[#0f1f33]/50 to-[#0a1628]/80 z-10" />
 
+        {/* KI-Kennzeichnung — außerhalb des Ken-Burns-Zooms, damit sie nicht mitskaliert */}
+        <span className="absolute top-24 right-4 z-20 pointer-events-none select-none rounded
+                         bg-black/55 backdrop-blur-sm px-2 py-1
+                         text-[11px] font-medium leading-none tracking-wide text-white">
+          KI-generiert
+        </span>
+
         {/* Smooth Fade in die nächste Sektion (slate-400) */}
         <div className="absolute bottom-0 left-0 right-0 h-20 md:h-24 bg-gradient-to-b from-transparent to-slate-400 z-10 pointer-events-none" />
 
@@ -147,6 +155,7 @@ export default function HomePage() {
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
+                  <AiLabel />
                 </div>
                 <div className="mt-5">
                   <h3 className="text-2xl font-bold text-white mb-3 flex items-center gap-2 underline decoration-accent underline-offset-4">
@@ -172,6 +181,7 @@ export default function HomePage() {
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
+                  <AiLabel />
                 </div>
                 <div className="mt-5">
                   <h3 className="text-2xl font-bold text-white mb-3 flex items-center gap-2 underline decoration-accent underline-offset-4">

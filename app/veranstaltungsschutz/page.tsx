@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatedSection, SlideIn } from "@/components/ui/AnimatedSection";
+import { AiLabel } from "@/components/ui/AiLabel";
 import { Check, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -17,6 +18,7 @@ export default function VeranstaltungsschutzPage() {
             <SlideIn direction="left" duration={0.55}>
               <div className="relative h-[420px] rounded-xl overflow-hidden shadow-2xl">
                 <Image src="/images/5.webp" alt="Veranstaltungsplanung" fill className="object-cover" />
+                <AiLabel />
               </div>
             </SlideIn>
             <SlideIn direction="right" delay={0.2}>
@@ -67,6 +69,7 @@ export default function VeranstaltungsschutzPage() {
             <SlideIn direction="right" delay={0.2} duration={0.55}>
               <div className="relative h-[420px] rounded-xl overflow-hidden shadow-2xl">
                 <Image src="/images/6.webp" alt="Sicherheitspersonal" fill className="object-cover" />
+                <AiLabel />
               </div>
             </SlideIn>
           </div>
@@ -122,9 +125,11 @@ export default function VeranstaltungsschutzPage() {
               <div className="space-y-8">
                 <div className="relative h-[340px] rounded-xl overflow-hidden shadow-2xl">
                   <Image src="/images/7.webp" alt="Einlasskontrolle" fill className="object-cover" />
+                  <AiLabel />
                 </div>
                 <div className="relative h-[340px] rounded-xl overflow-hidden shadow-2xl">
                   <Image src="/images/8.webp" alt="Backstage Schutz" fill className="object-cover" />
+                  <AiLabel />
                 </div>
               </div>
             </SlideIn>

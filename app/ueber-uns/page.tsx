@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { SlideIn, AnimatedSection } from "@/components/ui/AnimatedSection";
+import { AiLabel } from "@/components/ui/AiLabel";
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 
@@ -120,6 +121,7 @@ export default function UeberUnsPage() {
             <SlideIn direction="right" delay={0.2}>
               <div className="relative h-[400px] rounded-xl overflow-hidden shadow-2xl">
                 <Image src="/images/4.webp" alt="Unser Team" fill className="object-cover" />
+                <AiLabel />
               </div>
             </SlideIn>
           </div>

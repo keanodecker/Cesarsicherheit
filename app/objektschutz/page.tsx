@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatedSection, SlideIn } from "@/components/ui/AnimatedSection";
+import { AiLabel } from "@/components/ui/AiLabel";
 import { Check, ArrowRight, Shield } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -32,6 +33,7 @@ export default function ObjektschutzPage() {
             <SlideIn direction="right" delay={0.2} duration={0.55}>
               <div className="relative h-[420px] rounded-xl overflow-hidden shadow-2xl">
                 <Image src="/images/9.webp" alt="Objektschutz" fill className="object-cover" />
+                <AiLabel />
               </div>
             </SlideIn>
           </div>
@@ -45,6 +47,7 @@ export default function ObjektschutzPage() {
             <SlideIn direction="left" duration={0.55} className="md:col-span-3">
               <div className="relative w-full h-[400px] rounded-xl overflow-hidden shadow-2xl">
                 <Image src="/images/10.webp" alt="Sicherheitskonzept" fill className="object-cover" />
+                <AiLabel />
               </div>
             </SlideIn>
             <SlideIn direction="right" delay={0.2} className="md:col-span-2">
