@@ -89,7 +89,7 @@ export default function HomePage() {
 
         {/* KI-Kennzeichnung — außerhalb des Ken-Burns-Zooms, damit sie nicht mitskaliert */}
         <span
-          className="absolute bottom-4 right-5 z-20 pointer-events-none select-none
+          className="absolute bottom-4 left-5 z-20 pointer-events-none select-none
                      text-[10px] font-normal leading-none tracking-wide text-white/60"
           style={{ textShadow: "0 1px 3px rgba(0,0,0,.85)" }}
         >
