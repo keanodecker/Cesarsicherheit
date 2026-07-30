@@ -88,9 +88,11 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a1628]/80 via-[#0f1f33]/50 to-[#0a1628]/80 z-10" />
 
         {/* KI-Kennzeichnung — außerhalb des Ken-Burns-Zooms, damit sie nicht mitskaliert */}
-        <span className="absolute top-24 right-4 z-20 pointer-events-none select-none rounded
-                         bg-black/55 backdrop-blur-sm px-2 py-1
-                         text-[11px] font-medium leading-none tracking-wide text-white">
+        <span
+          className="absolute bottom-4 right-5 z-20 pointer-events-none select-none
+                     text-[10px] font-normal leading-none tracking-wide text-white/60"
+          style={{ textShadow: "0 1px 3px rgba(0,0,0,.85)" }}
+        >
           KI-generiert
         </span>
 

@@ -95,19 +95,19 @@ export default function CookieBanner() {
                 onClick={acceptAll}
                 className="bg-[#d4a84b] hover:bg-[#c49940] text-white font-semibold py-2 px-5 rounded-full text-sm transition-all duration-300 hover:scale-105"
               >
-                Accept all
+                Alle akzeptieren
               </button>
               <button
                 onClick={rejectAll}
                 className="bg-[#d4a84b] hover:bg-[#c49940] text-white font-semibold py-2 px-5 rounded-full text-sm transition-all duration-300 hover:scale-105"
               >
-                Reject all
+                Alle ablehnen
               </button>
               <button
                 onClick={() => setModalOpen(true)}
                 className="bg-white/10 hover:bg-white/20 text-white font-semibold py-2 px-5 rounded-full text-sm transition-all duration-300 border border-white/20"
               >
-                Configure
+                Einstellungen
               </button>
             </div>
           </div>
@@ -211,13 +211,13 @@ export default function CookieBanner() {
                 onClick={acceptAll}
                 className="bg-[#d4a84b] hover:bg-[#c49940] text-white font-semibold py-2 px-5 rounded-full text-sm transition-all duration-300 hover:scale-105"
               >
-                Accept all
+                Alle akzeptieren
               </button>
               <button
                 onClick={rejectAll}
                 className="bg-[#d4a84b] hover:bg-[#c49940] text-white font-semibold py-2 px-5 rounded-full text-sm transition-all duration-300 hover:scale-105"
               >
-                Reject all
+                Alle ablehnen
               </button>
               <button
                 onClick={savePreferences}
